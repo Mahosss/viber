@@ -54,17 +54,6 @@ body{
   to{background-position:0 300px}
 }
 
-/* ⛄ Snowman */
-.snowman{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  font-size:70px;
-  z-index:2;
-  pointer-events:none;
-  filter:drop-shadow(0 6px 12px rgba(0,0,0,.6));
-}
-
 .profile{
   max-width:420px;
   width:100%;
@@ -74,6 +63,47 @@ body{
   box-shadow:0 20px 60px rgba(0,0,0,.6);
   position:relative;
   z-index:3;
+}
+
+/* ⛄ Snowman Hi */
+.snowman-hi{
+  position:absolute;
+  right:12px;
+  bottom:140px; /* فوق زر my Xat Forum */
+  text-align:center;
+  z-index:4;
+  pointer-events:none;
+}
+
+.snowman-emoji{
+  font-size:46px;
+  display:block;
+  animation:wave 2.5s ease-in-out infinite;
+  transform-origin:bottom center;
+}
+
+.snowman-text{
+  font-size:12px;
+  font-weight:600;
+  color:#c7d2fe;
+  opacity:0;
+  animation:hiText 2.5s ease-in-out infinite;
+  text-shadow:0 0 10px rgba(199,210,254,.4);
+}
+
+@keyframes wave{
+  0%{transform:rotate(0)}
+  20%{transform:rotate(8deg)}
+  40%{transform:rotate(-8deg)}
+  60%{transform:rotate(6deg)}
+  80%{transform:rotate(-6deg)}
+  100%{transform:rotate(0)}
+}
+
+@keyframes hiText{
+  0%,40%{opacity:0;transform:translateY(6px)}
+  60%,80%{opacity:1;transform:translateY(0)}
+  100%{opacity:0}
 }
 
 .avatar{
@@ -123,14 +153,9 @@ h1{text-align:center;font-size:26px}
   font-weight:600;
   letter-spacing:2px;
   color:#c7d2fe;
-  background:transparent;   
-  padding:0;              
-}
-
-  .clock{
   text-shadow:0 0 12px rgba(199,210,254,.35);
 }
-  
+
 .actions{
   display:grid;
   gap:12px;
@@ -160,7 +185,6 @@ h1{text-align:center;font-size:26px}
 <body>
 
 <div class="snow"></div>
-<div class="snowman">⛄</div>
 
 <div class="profile">
 
@@ -184,8 +208,13 @@ h1{text-align:center;font-size:26px}
     <div class="skill">Trading</div>
   </div>
 
-  <!-- ساعة -->
   <div class="clock" id="clock">00:00:00</div>
+
+  <!-- ⛄ Snowman -->
+  <div class="snowman-hi">
+    <span class="snowman-emoji">⛄</span>
+    <span class="snowman-text">Hi!</span>
+  </div>
 
   <div class="actions">
     <a href="https://forum.xat.com/profile/14791/" class="btn btn-primary">my Xat Forum</a>
@@ -196,11 +225,11 @@ h1{text-align:center;font-size:26px}
 
 <script>
 function updateClock(){
-  const now = new Date();
-  const h = String(now.getHours()).padStart(2,'0');
-  const m = String(now.getMinutes()).padStart(2,'0');
-  const s = String(now.getSeconds()).padStart(2,'0');
-  document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+  const now=new Date();
+  const h=String(now.getHours()).padStart(2,'0');
+  const m=String(now.getMinutes()).padStart(2,'0');
+  const s=String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('clock').textContent=`${h}:${m}:${s}`;
 }
 setInterval(updateClock,1000);
 updateClock();
