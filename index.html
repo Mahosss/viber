@@ -65,47 +65,6 @@ body{
   z-index:3;
 }
 
-/* ⛄ Snowman Hi */
-.snowman-hi{
-  position:absolute;
-  right:12px;
-  bottom:140px; /* فوق زر my Xat Forum */
-  text-align:center;
-  z-index:4;
-  pointer-events:none;
-}
-
-.snowman-emoji{
-  font-size:46px;
-  display:block;
-  animation:wave 2.5s ease-in-out infinite;
-  transform-origin:bottom center;
-}
-
-.snowman-text{
-  font-size:12px;
-  font-weight:600;
-  color:#c7d2fe;
-  opacity:0;
-  animation:hiText 2.5s ease-in-out infinite;
-  text-shadow:0 0 10px rgba(199,210,254,.4);
-}
-
-@keyframes wave{
-  0%{transform:rotate(0)}
-  20%{transform:rotate(8deg)}
-  40%{transform:rotate(-8deg)}
-  60%{transform:rotate(6deg)}
-  80%{transform:rotate(-6deg)}
-  100%{transform:rotate(0)}
-}
-
-@keyframes hiText{
-  0%,40%{opacity:0;transform:translateY(6px)}
-  60%,80%{opacity:1;transform:translateY(0)}
-  100%{opacity:0}
-}
-
 .avatar{
   width:110px;height:110px;
   margin:0 auto 15px;
@@ -156,6 +115,54 @@ h1{text-align:center;font-size:26px}
   text-shadow:0 0 12px rgba(199,210,254,.35);
 }
 
+/* ⛄ Snowman Hi فوق الخط الفاصل */
+.snowman-hi{
+  position:absolute;
+  top:90px; /* فوق الخط الفاصل بعد الاسم */
+  right:20px;
+  text-align:center;
+  z-index:4;
+  pointer-events:none;
+}
+
+.snowman-body{
+  font-size:46px;
+  display:block;
+}
+
+.snowman-hand{
+  position:absolute;
+  right:-14px;
+  top:8px;
+  font-size:20px;
+  animation:handWave 2.5s ease-in-out infinite;
+  transform-origin:left center;
+}
+
+.snowman-text{
+  font-size:12px;
+  font-weight:600;
+  color:#c7d2fe;
+  opacity:0;
+  animation:hiText 2.5s ease-in-out infinite;
+  text-shadow:0 0 10px rgba(199,210,254,.4);
+}
+
+@keyframes handWave{
+  0%{transform:rotate(0deg)}
+  20%{transform:rotate(20deg)}
+  40%{transform:rotate(-20deg)}
+  60%{transform:rotate(15deg)}
+  80%{transform:rotate(-15deg)}
+  100%{transform:rotate(0deg)}
+}
+
+@keyframes hiText{
+  0%,40%{opacity:0;transform:translateY(6px)}
+  60%,80%{opacity:1;transform:translateY(0)}
+  100%{opacity:0}
+}
+
 .actions{
   display:grid;
   gap:12px;
@@ -195,6 +202,13 @@ h1{text-align:center;font-size:26px}
   <h1>Viber</h1>
   <div class="tagline">Trade days and powers</div>
 
+  <!-- ⛄ رجل التلج فوق الخط الفاصل -->
+  <div class="snowman-hi">
+    <span class="snowman-body">⛄</span>
+    <span class="snowman-hand">👋</span>
+    <span class="snowman-text">Hi!</span>
+  </div>
+
   <div class="divider"></div>
 
   <div class="info">
@@ -209,12 +223,6 @@ h1{text-align:center;font-size:26px}
   </div>
 
   <div class="clock" id="clock">00:00:00</div>
-
-  <!-- Snowman -->
-  <div class="snowman-hi">
-    <span class="snowman-emoji">⛄</span>
-    <span class="snowman-text">Merry Xmas!</span>
-  </div>
 
   <div class="actions">
     <a href="https://forum.xat.com/profile/14791/" class="btn btn-primary">my Xat Forum</a>
