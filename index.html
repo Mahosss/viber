@@ -1,246 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viber</title>
-  <meta name="description" content="Viber – Professional profile page showcasing skills, personality, and contact links." />
-  <meta name="author" content="Viber" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Viber</title>
 
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #6366f1;
-      --accent-soft: rgba(99,102,241,.15);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+:root {
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#6366f1;
+  --accent-soft:rgba(99,102,241,.15);
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top, #1e293b, var(--bg));
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
 
-    /* ❄️ تلج متطاير */
-    .snow {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-        radial-gradient(2px 2px at 80px 90px, #fff, transparent),
-        radial-gradient(3px 3px at 150px 50px, #fff, transparent),
-        radial-gradient(2px 2px at 200px 120px, #fff, transparent),
-        radial-gradient(3px 3px at 260px 200px, #fff, transparent);
-      background-size: 300px 300px;
-      animation: snowFall 14s linear infinite;
-      z-index: 1;
-      opacity: .8;
-    }
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#1e293b,var(--bg));
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  position:relative;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
 
-    @keyframes snowFall {
-      from { background-position: 0 0; }
-      to { background-position: 0 300px; }
-    }
+/* ❄️ Snow */
+.snow{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(2px 2px at 80px 90px,#fff,transparent),
+    radial-gradient(3px 3px at 150px 50px,#fff,transparent),
+    radial-gradient(2px 2px at 200px 120px,#fff,transparent),
+    radial-gradient(3px 3px at 260px 200px,#fff,transparent);
+  background-size:300px 300px;
+  animation:snowFall 14s linear infinite;
+  z-index:1;
+  opacity:.8;
+}
+@keyframes snowFall{
+  from{background-position:0 0}
+  to{background-position:0 300px}
+}
 
-    /* ⛄ رجل تلج */
-    .snowman {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      font-size: 70px;
-      z-index: 2;
-      opacity: .9;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,.6));
-      pointer-events: none;
-    }
+/* ⛄ Snowman */
+.snowman{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  font-size:70px;
+  z-index:2;
+  pointer-events:none;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.6));
+}
 
-    .profile {
-      max-width: 420px;
-      width: 100%;
-      background: linear-gradient(180deg, #111827, #0b1220);
-      border-radius: 20px;
-      padding: 30px 25px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.6);
-      position: relative;
-      overflow: hidden;
-      z-index: 3;
-    }
+.profile{
+  max-width:420px;
+  width:100%;
+  background:linear-gradient(180deg,#111827,#0b1220);
+  border-radius:20px;
+  padding:30px 25px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  position:relative;
+  z-index:3;
+}
 
-    .profile::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, var(--accent-soft), transparent);
-      opacity: .8;
-      pointer-events: none;
-    }
+.avatar{
+  width:110px;height:110px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#22d3ee);
+  padding:4px;
+}
+.avatar img{
+  width:100%;height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
 
-    .avatar {
-      width: 110px;
-      height: 110px;
-      margin: 0 auto 15px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #22d3ee);
-      padding: 4px;
-    }
+h1{text-align:center;font-size:26px}
+.tagline{text-align:center;font-size:14px;color:var(--muted);margin-top:6px}
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      background: #000;
-    }
+.divider{
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--accent),transparent);
+  margin:20px 0;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+.info{display:grid;gap:12px;font-size:14px}
+.info span{color:var(--muted)}
 
-    .tagline {
-      text-align: center;
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:8px;
+  justify-content:center;
+}
+.skill{
+  background:var(--accent-soft);
+  color:#c7d2fe;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+}
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--accent), transparent);
-      margin: 20px 0;
-    }
+/* ⏰ Digital Clock */
+.clock{
+  margin-top:18px;
+  text-align:center;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:2px;
+  color:#c7d2fe;
+  background:var(--accent-soft);
+  padding:10px 16px;
+  border-radius:12px;
+}
 
-    .info {
-      display: grid;
-      gap: 12px;
-      font-size: 14px;
-    }
+.actions{
+  display:grid;
+  gap:12px;
+  margin-top:25px;
+}
 
-    .info span {
-      color: var(--muted);
-    }
+.btn{
+  text-decoration:none;
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  font-weight:600;
+  font-size:14px;
+}
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .skill {
-      background: var(--accent-soft);
-      color: #c7d2fe;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-    }
-
-    .bio {
-      font-size: 13px;
-      line-height: 1.7;
-      color: #d1d5db;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .actions {
-      display: grid;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .btn {
-      text-decoration: none;
-      text-align: center;
-      padding: 12px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #22d3ee);
-      color: #020617;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(99,102,241,.4);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--accent);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--accent-soft);
-    }
-
-    footer {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 11px;
-      color: #6b7280;
-    }
-  </style>
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),#22d3ee);
+  color:#020617;
+}
+.btn-outline{
+  border:1px solid var(--accent);
+  color:var(--text);
+}
+</style>
 </head>
+
 <body>
 
-  <!-- التلج -->
-  <div class="snow"></div>
+<div class="snow"></div>
+<div class="snowman">⛄</div>
 
-  <!-- رجل التلج -->
-  <div class="snowman">⛄</div>
+<div class="profile">
 
-  <div class="profile">
-
-    <div class="avatar">
-      <img src="https://img.alfrsantv.com/img/f176565972653571.jpg" alt="Viber Profile Picture">
-    </div>
-
-    <h1>Viber</h1>
-    <div class="tagline">Trade days and powers</div>
-
-    <div class="divider"></div>
-
-    <div class="info">
-      <div><span>Regname :</span> Viber</div>
-      <div><span>ID:</span> 400100633</div>
-      <div><span>support chat: </span> Trade, Assistance, Loja</div>
-    </div>
-
-    <div class="skills">
-      <div class="skill">Helping</div>
-      <div class="skill">Trading</div>
-    </div>
-
-    <p class="bio">.</p>
-
-    <div class="actions">
-      <a href="https://forum.xat.com/profile/14791/" class="btn btn-primary">my Xat Forum</a>
-      <a href="https://x.com/viberxat" class="btn btn-outline">Contact Me On Twitter</a>
-    </div>
-
-    <footer></footer>
+  <div class="avatar">
+    <img src="https://img.alfrsantv.com/img/f176565972653571.jpg">
   </div>
+
+  <h1>Viber</h1>
+  <div class="tagline">Trade days and powers</div>
+
+  <div class="divider"></div>
+
+  <div class="info">
+    <div><span>Regname :</span> Viber</div>
+    <div><span>ID :</span> 400100633</div>
+    <div><span>support chat :</span> Trade, Assistance, Loja</div>
+  </div>
+
+  <div class="skills">
+    <div class="skill">Helping</div>
+    <div class="skill">Trading</div>
+  </div>
+
+  <!-- ⏰ Clock -->
+  <div class="clock" id="clock">00:00:00</div>
+
+  <div class="actions">
+    <a href="https://forum.xat.com/profile/14791/" class="btn btn-primary">my Xat Forum</a>
+    <a href="https://x.com/viberxat" class="btn btn-outline">Contact Me On Twitter</a>
+  </div>
+
+</div>
+
+<script>
+function updateClock(){
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  const s = String(now.getSeconds()).padStart(2,'0');
+  document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
 
 </body>
 </html>
