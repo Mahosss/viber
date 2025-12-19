@@ -85,7 +85,6 @@ h1{text-align:center;font-size:26px}
   height:1px;
   background:linear-gradient(to right,transparent,var(--accent),transparent);
   margin:20px 0;
-  position:relative;
 }
 
 .info{display:grid;gap:12px;font-size:14px}
@@ -116,46 +115,6 @@ h1{text-align:center;font-size:26px}
   text-shadow:0 0 12px rgba(199,210,254,.35);
 }
 
-/* ⛄ Snowman SVG فوق الخط الفاصل أقصى اليمين مع قبعة */
-.snowman-hi{
-  position:relative;
-  width:100%;
-  display:flex;
-  justify-content:flex-end; /* أقصى اليمين */
-  margin-bottom:10px;
-}
-
-.snowman-text{
-  font-size:12px;
-  font-weight:600;
-  color:#c7d2fe;
-  opacity:0;
-  animation:hiText 2.5s ease-in-out infinite;
-  text-shadow:0 0 10px rgba(199,210,254,.4);
-  margin-top:-10px;
-  position:absolute;
-}
-
-.hand{
-  transform-origin:42px 35px;
-  animation:handWave 2.5s ease-in-out infinite;
-}
-
-@keyframes handWave{
-  0%{transform:rotate(0deg)}
-  20%{transform:rotate(20deg)}
-  40%{transform:rotate(-20deg)}
-  60%{transform:rotate(15deg)}
-  80%{transform:rotate(-15deg)}
-  100%{transform:rotate(0deg)}
-}
-
-@keyframes hiText{
-  0%,40%{opacity:0;transform:translateY(6px)}
-  60%,80%{opacity:1;transform:translateY(0)}
-  100%{opacity:0}
-}
-
 .actions{
   display:grid;
   gap:12px;
@@ -179,6 +138,40 @@ h1{text-align:center;font-size:26px}
   border:1px solid var(--accent);
   color:var(--text);
 }
+
+/* ⛄ Snowman حقيقي خارج الكارت أسفل يمين */
+.snowman-real {
+  position:fixed;
+  bottom:25px; /* أسفل الكارت */
+  right:25px;  /* بجانب الكارت */
+  width:80px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  z-index:2;
+  pointer-events:none;
+}
+
+.snowman-img {
+  width:100%;
+  height:auto;
+}
+
+.snowman-text {
+  font-size:12px;
+  font-weight:600;
+  color:#c7d2fe;
+  opacity:0;
+  animation:hiText 2.5s ease-in-out infinite;
+  text-shadow:0 0 10px rgba(199,210,254,.4);
+  margin-top:-12px;
+}
+
+@keyframes hiText{
+  0%,40%{opacity:0;transform:translateY(6px)}
+  60%,80%{opacity:1;transform:translateY(0)}
+  100%{opacity:0}
+}
 </style>
 </head>
 
@@ -194,29 +187,6 @@ h1{text-align:center;font-size:26px}
 
   <h1>Viber</h1>
   <div class="tagline">Trade days and powers</div>
-
-  <!-- ⛄ رجل ثلج SVG فوق الخط الفاصل أقصى اليمين مع قبعة -->
-  <div class="snowman-hi">
-    <svg width="60" height="80" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
-      <!-- أسفل الجسم -->
-      <circle cx="30" cy="55" r="15" fill="#fff" stroke="#ccc" stroke-width="2"/>
-      <!-- وسط الجسم -->
-      <circle cx="30" cy="35" r="12" fill="#fff" stroke="#ccc" stroke-width="2"/>
-      <!-- الرأس -->
-      <circle cx="30" cy="18" r="8" fill="#fff" stroke="#ccc" stroke-width="2"/>
-      <!-- عيون -->
-      <circle cx="27" cy="16" r="1" fill="#000"/>
-      <circle cx="33" cy="16" r="1" fill="#000"/>
-      <!-- فم -->
-      <path d="M26 20 Q30 22 34 20" stroke="#000" stroke-width="1" fill="transparent"/>
-      <!-- قبعة -->
-      <rect x="23" y="10" width="14" height="6" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
-      <rect x="25" y="6" width="10" height="6" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
-      <!-- اليد اليمنى -->
-      <line class="hand" x1="42" y1="35" x2="55" y2="25" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-    </svg>
-    <span class="snowman-text">Hi!</span>
-  </div>
 
   <div class="divider"></div>
 
@@ -238,6 +208,12 @@ h1{text-align:center;font-size:26px}
     <a href="https://x.com/viberxat" class="btn btn-outline">Contact Me On Twitter</a>
   </div>
 
+</div>
+
+<!-- ⛄  -->
+<div class="snowman-real">
+  <img src="https://i.ibb.co/5j9F4QG/snowman.png" alt="Snowman waving" class="snowman-img">
+  <span class="snowman-text">merry christmas!</span>
 </div>
 
 <script>
