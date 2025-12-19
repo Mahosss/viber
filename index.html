@@ -139,11 +139,11 @@ h1{text-align:center;font-size:26px}
   color:var(--text);
 }
 
-/* PNG Snowman */
+/* PNG Snowman جنب الكارت مباشرة */
 .snowman-png {
-  position:fixed;
-  bottom:25px;
-  right:25px;
+  position:absolute;
+  bottom:0;
+  right:-20px; /* خارج الكارت قليلًا */
   width:80px;
   z-index:2;
   pointer-events:none;
@@ -190,10 +190,10 @@ h1{text-align:center;font-size:26px}
     <a href="https://x.com/viberxat" class="btn btn-outline">Contact Me On Twitter</a>
   </div>
 
-</div>
+  <!-- PNG -->
+  <img src="https://img.alfrsantv.com/img/f176611235720351.png" class="snowman-png" alt="Snowman">
 
-<!-- PNG Snowman -->
-<img src="https://img.alfrsantv.com/img/f176611235720351.png" class="snowman-png" alt="Snowman">
+</div>
 
 <script>
 function updateClock(){
