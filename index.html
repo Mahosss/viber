@@ -85,6 +85,7 @@ h1{text-align:center;font-size:26px}
   height:1px;
   background:linear-gradient(to right,transparent,var(--accent),transparent);
   margin:20px 0;
+  position:relative;
 }
 
 .info{display:grid;gap:12px;font-size:14px}
@@ -115,15 +116,13 @@ h1{text-align:center;font-size:26px}
   text-shadow:0 0 12px rgba(199,210,254,.35);
 }
 
-/* ⛄ Snowman Hi فوق الخط الفاصل مباشرة */
+/* ⛄ Snowman Hi فوق الخط الفاصل */
 .snowman-hi{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:calc(100% - 15px); /* مباشرة فوق الخط الفاصل */
-  text-align:center;
-  z-index:4;
-  pointer-events:none;
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:10px; /* مسافة صغيرة فوق الخط الفاصل */
 }
 
 .snowman-body{
@@ -203,11 +202,11 @@ h1{text-align:center;font-size:26px}
   <h1>Viber</h1>
   <div class="tagline">Trade days and powers</div>
 
-  <!-- ⛄ -->
+  <!-- ⛄ رجل التلج فوق الخط الفاصل مباشرة -->
   <div class="snowman-hi">
     <span class="snowman-body">⛄</span>
     <span class="snowman-hand">👋</span>
-    <span class="snowman-text">merry christmas!</span>
+    <span class="snowman-text">Hi!</span>
   </div>
 
   <div class="divider"></div>
