@@ -139,7 +139,7 @@ h1{text-align:center;font-size:26px}
   color:var(--text);
 }
 
-/* ⛄ Snowman SVG خارج الكارت أسفل يمين */
+/* ⛄ Snowman SVG كرتوني */
 .snowman-xmas {
   position:fixed;
   bottom:25px;
@@ -153,8 +153,8 @@ h1{text-align:center;font-size:26px}
 }
 
 .hand{
-  transform-origin:58px 60; /* نقطة دوران اليد */
-  animation:handWave 2.5s ease-in-out infinite;
+  transform-origin:58px 60;
+  animation:handWave 2s ease-in-out infinite;
 }
 
 .snowman-text{
@@ -170,10 +170,9 @@ h1{text-align:center;font-size:26px}
 
 @keyframes handWave{
   0%{transform:rotate(0deg)}
-  20%{transform:rotate(20deg)}
-  40%{transform:rotate(-20deg)}
-  60%{transform:rotate(15deg)}
-  80%{transform:rotate(-15deg)}
+  25%{transform:rotate(20deg)}
+  50%{transform:rotate(-20deg)}
+  75%{transform:rotate(20deg)}
   100%{transform:rotate(0deg)}
 }
 
@@ -220,7 +219,7 @@ h1{text-align:center;font-size:26px}
 
 </div>
 
-<!-- ⛄ Snowman SVG مع حركة اليد وكلمة Merry Christmas -->
+<!-- ⛄ Snowman كرتوني -->
 <div class="snowman-xmas">
   <svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
     <!-- أسفل الجسم -->
@@ -234,7 +233,7 @@ h1{text-align:center;font-size:26px}
     <circle cx="44" cy="33" r="2" fill="#000"/>
     <!-- فم -->
     <path d="M34 38 Q40 42 46 38" stroke="#000" stroke-width="1" fill="transparent"/>
-    <!-- قبعة -->
+    <!-- قبعة حمراء -->
     <rect x="32" y="20" width="16" height="6" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
     <rect x="35" y="12" width="10" height="8" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
     <!-- اليد اليمنى -->
