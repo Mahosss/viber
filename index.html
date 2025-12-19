@@ -116,27 +116,13 @@ h1{text-align:center;font-size:26px}
   text-shadow:0 0 12px rgba(199,210,254,.35);
 }
 
-/* ⛄ Snowman Hi فوق الخط الفاصل */
+/* ⛄ Snowman SVG فوق الخط الفاصل مباشرة */
 .snowman-hi{
   position:relative;
   width:100%;
   display:flex;
   justify-content:center;
-  margin-bottom:10px; /* مسافة صغيرة فوق الخط الفاصل */
-}
-
-.snowman-body{
-  font-size:46px;
-  display:block;
-}
-
-.snowman-hand{
-  position:absolute;
-  right:-14px;
-  top:8px;
-  font-size:20px;
-  animation:handWave 2.5s ease-in-out infinite;
-  transform-origin:left center;
+  margin-bottom:10px; /* فوق الخط الفاصل */
 }
 
 .snowman-text{
@@ -146,6 +132,13 @@ h1{text-align:center;font-size:26px}
   opacity:0;
   animation:hiText 2.5s ease-in-out infinite;
   text-shadow:0 0 10px rgba(199,210,254,.4);
+  margin-top:-10px;
+  position:absolute;
+}
+
+.hand{
+  transform-origin:42px 35px; /* بداية اليد */
+  animation:handWave 2.5s ease-in-out infinite;
 }
 
 @keyframes handWave{
@@ -202,10 +195,23 @@ h1{text-align:center;font-size:26px}
   <h1>Viber</h1>
   <div class="tagline">Trade days and powers</div>
 
-  <!-- ⛄ رجل التلج فوق الخط الفاصل مباشرة -->
+  <!-- ⛄ رجل ثلج SVG فوق الخط الفاصل -->
   <div class="snowman-hi">
-    <span class="snowman-body">⛄</span>
-    <span class="snowman-hand">👋</span>
+    <svg width="60" height="80" viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- أسفل الجسم -->
+      <circle cx="30" cy="55" r="15" fill="#fff" stroke="#ccc" stroke-width="2"/>
+      <!-- وسط الجسم -->
+      <circle cx="30" cy="35" r="12" fill="#fff" stroke="#ccc" stroke-width="2"/>
+      <!-- الرأس -->
+      <circle cx="30" cy="18" r="8" fill="#fff" stroke="#ccc" stroke-width="2"/>
+      <!-- عيون -->
+      <circle cx="27" cy="16" r="1" fill="#000"/>
+      <circle cx="33" cy="16" r="1" fill="#000"/>
+      <!-- فم -->
+      <path d="M26 20 Q30 22 34 20" stroke="#000" stroke-width="1" fill="transparent"/>
+      <!-- اليد اليمنى -->
+      <line class="hand" x1="42" y1="35" x2="55" y2="25" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    </svg>
     <span class="snowman-text">Hi!</span>
   </div>
 
