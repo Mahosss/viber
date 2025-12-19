@@ -139,47 +139,20 @@ h1{text-align:center;font-size:26px}
   color:var(--text);
 }
 
-/* ⛄ Snowman SVG كرتوني */
-.snowman-xmas {
+/* PNG Snowman */
+.snowman-png {
   position:fixed;
   bottom:25px;
   right:25px;
   width:80px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
   z-index:2;
   pointer-events:none;
+  animation:waveHand 2.5s ease-in-out infinite;
 }
 
-.hand{
-  transform-origin:58px 60;
-  animation:handWave 2s ease-in-out infinite;
-}
-
-.snowman-text{
-  font-size:12px;
-  font-weight:600;
-  color:#c7d2fe;
-  opacity:0;
-  animation:hiText 2.5s ease-in-out infinite;
-  text-shadow:0 0 10px rgba(199,210,254,.4);
-  margin-top:-12px;
-  text-align:center;
-}
-
-@keyframes handWave{
-  0%{transform:rotate(0deg)}
-  25%{transform:rotate(20deg)}
-  50%{transform:rotate(-20deg)}
-  75%{transform:rotate(20deg)}
-  100%{transform:rotate(0deg)}
-}
-
-@keyframes hiText{
-  0%,40%{opacity:0;transform:translateY(6px)}
-  60%,80%{opacity:1;transform:translateY(0)}
-  100%{opacity:0}
+@keyframes waveHand{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
 }
 </style>
 </head>
@@ -219,28 +192,8 @@ h1{text-align:center;font-size:26px}
 
 </div>
 
-<!--  Snowman  -->
-<div class="snowman-xmas">
-  <svg width="80" height="120" viewBox="0 0 80 120" xmlns="http://www.w3.org/2000/svg">
-    <!-- أسفل الجسم -->
-    <circle cx="40" cy="90" r="25" fill="#fff" stroke="#ccc" stroke-width="2"/>
-    <!-- وسط الجسم -->
-    <circle cx="40" cy="60" r="18" fill="#fff" stroke="#ccc" stroke-width="2"/>
-    <!-- الرأس -->
-    <circle cx="40" cy="35" r="12" fill="#fff" stroke="#ccc" stroke-width="2"/>
-    <!-- عيون -->
-    <circle cx="36" cy="33" r="2" fill="#000"/>
-    <circle cx="44" cy="33" r="2" fill="#000"/>
-    <!-- فم -->
-    <path d="M34 38 Q40 42 46 38" stroke="#000" stroke-width="1" fill="transparent"/>
-    <!-- قبعة حمراء -->
-    <rect x="32" y="20" width="16" height="6" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
-    <rect x="35" y="12" width="10" height="8" fill="#d32f2f" stroke="#fff" stroke-width="1" rx="1"/>
-    <!-- اليد اليمنى -->
-    <line class="hand" x1="58" y1="60" x2="75" y2="40" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-  </svg>
-  <span class="snowman-text">Merry Christmas!</span>
-</div>
+<!-- PNG Snowman -->
+<img src="https://img.alfrsantv.com/img/f176611235720351.png" class="snowman-png" alt="Snowman">
 
 <script>
 function updateClock(){
