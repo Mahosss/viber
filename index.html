@@ -139,14 +139,32 @@ h1{text-align:center;font-size:26px}
   color:var(--text);
 }
 
-.snowman-png {
+/* PNG Snowman خارج الكارت */
+.snowman-container {
   position:absolute;
-  top:50px;      /* فوق الكارت */
-  right:-100px;    /* خارج الكارت جهة اليمين */
+  top:-20px;      /* تحكم في ارتفاع الرجل الثلج */
+  right:-40px;    /* تحكم في قرب/بعد الرجل الثلج عن الكارت */
   width:90px;
   z-index:2;
-  pointer-events:none;
+}
+
+.snowman-png {
+  width:100%;
+  display:block;
   animation:waveHand 2.5s ease-in-out infinite;
+}
+
+.snowman-text {
+  position:absolute;
+  bottom:100%;      /* فوق الرجل الثلج مباشرة */
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  color:#c7d2fe;
+  font-weight:600;
+  text-shadow:0 0 5px rgba(0,0,0,.4);
+  opacity:0;
+  animation:hiText 2.5s ease-in-out infinite;
 }
 
 @keyframes waveHand{
@@ -154,6 +172,11 @@ h1{text-align:center;font-size:26px}
   50%{transform:translateY(-4px)}
 }
 
+@keyframes hiText {
+  0%,40% {opacity:0; transform:translateX(-50%) translateY(6px);}
+  60%,80% {opacity:1; transform:translateX(-50%) translateY(0);}
+  100% {opacity:0;}
+}
 </style>
 </head>
 
@@ -168,7 +191,7 @@ h1{text-align:center;font-size:26px}
   </div>
 
   <h1>Viber</h1>
-  <div class="tagline"></div>
+  <div class="tagline">Trade days and powers</div>
 
   <div class="divider"></div>
 
@@ -189,8 +212,13 @@ h1{text-align:center;font-size:26px}
     <a href="https://forum.xat.com/profile/14791/" class="btn btn-primary">my Xat Forum</a>
     <a href="https://x.com/viberxat" class="btn btn-outline">Contact Me On Twitter</a>
   </div>
-  <img src="https://img.alfrsantv.com/img/f176611235720351.png" class="snowman-png" alt="Snowman">
-  <span class="snowman-text">Merry Christmas!</span>
+
+  <!-- PNG Snowman + نص فوقه -->
+  <div class="snowman-container">
+    <img src="https://img.alfrsantv.com/img/f176611235720351.png" class="snowman-png" alt="Snowman">
+    <span class="snowman-text">Merry Christmas!</span>
+  </div>
+
 </div>
 
 <script>
